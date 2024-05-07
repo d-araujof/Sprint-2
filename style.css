@@ -1,0 +1,314 @@
+@import url('https://fonts.googleapis.com/css2?family=Imbue:opsz@10..100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap');
+
+
+
+:root {
+    /* CORES */
+    --preto: #0D0D0D;
+    --azul-max: #0874BE;
+    --azul-medium: #02ADE3;
+    --azul-min: #7DD8D8;
+    --branco: #fafbfb;
+
+    /* H1 */
+    --h1_font-family: "Imbue", sans-serif;
+    --h1_font-size: calc(var(--p_font-size) * 2.4);
+    --h1_font-weight_400: 400;
+
+    /* H2 */
+    --h2_font-family: "M PLUS Code Latin", monospace;
+    --h2_font-size: calc(var(--h1_font-size) - 20px);
+
+    /* P */
+    --p_font-family: "M PLUS Code Latin", monospace;
+    --p_font-size: clamp(14px, 1.6vw, 16px);
+}
+
+
+
+/* RESET HTML */
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--branco);
+}
+
+ul li {
+    list-style-type: none;
+  }
+
+a {
+    text-decoration: none;
+}
+
+
+
+/* H1 | H2 | P */
+h1 {
+    font-family: var(--h1_font-family);
+    font-size: var(--h1_font-size);
+    font-weight: var(--h1_font-weight_400);
+}
+
+/* H2 é um P com tamnho de H2 */
+h2{
+    font-family: var(--h2_font-family);
+    font-size: var(--h2_font-size);
+}
+
+p{
+    font-family: var(--p_font-family);
+    font-size: var(--p_font-size);
+}
+
+
+
+/* MENU */
+a {
+    color: var(--preto);
+    transition: 0.3s;
+    font-family: var(--p_font-family);
+    text-decoration: none;
+    font-size: var(--p_font-size);
+}
+  
+a:hover {
+    color: var(--azul-min);
+}
+  
+.logo {
+    font-family: var(--h1_font-family);
+    font-size: var(--h1_font-size);
+    color: var(--azul-max);
+    font-weight: var(--h1_font-weight_400);
+}
+  
+nav {
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--branco);
+    height: 8vh;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+  
+.nav-list li {
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+  
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: var(--azul-medium);
+    margin: 8px;
+    transition: 0.3s;
+}
+  
+@media (max-width: 1025px) {
+    body {
+      overflow-x: hidden;
+    }
+    a{
+        color: var(--branco);
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 15rem;
+      height: 96vh;
+      background: var(--azul-medium);
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+}
+  
+.nav-list.active {
+    transform: translateX(0);
+}
+  
+@keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+  
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+  
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+  
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+
+/* MAIN */
+main {
+    background: url("src/foto-competicao.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    margin-bottom: 10vh;
+}
+
+
+
+/*STATUS*/
+.circulo-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 10vh 11vh 10vh;
+    margin-bottom: calc();
+}
+
+.circulo1, .circulo2, .circulo3, .circulo4 {
+    width: calc(var(--p_font-size) * 7);
+    height: calc(var(--p_font-size) * 7);
+    background-color: var(--azul-medium);
+    border-radius: 50%;
+    position: relative;
+    border: 2px solid var(--azul-medium);
+}
+
+.circulo1::before, .circulo2::before, .circulo3::before, .circulo4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--branco);
+}
+
+.circulo1::before{
+    clip-path: inset(0 0 100% 0);
+}
+
+.circulo2::before{
+    clip-path: inset(0 0 20% 0);
+}
+
+.circulo3::before{
+    clip-path: inset(0 0 70% 0);
+}
+
+.circulo4::before{
+    clip-path: inset(0 0 50% 0);
+}
+
+.word {
+    font-family: var(--p_font-family);
+    font-size: var(--p_font-size);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (max-width: 800px) {
+    .circulo-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+    }
+
+    .circulo1, .circulo2, .circulo3, .circulo4 {
+        margin-bottom: 6vh;
+    }
+
+    .circulo-container{
+        margin-bottom: 8vh;
+    }
+}
+
+
+
+/* SOBRE */
+.sobre{
+    display: block;
+    background-color: var(--azul-max);
+    padding: 5vh 40vh 5vh 40vh;
+}
+
+.sobre div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.sobre h1{
+    color: var(--branco);
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.sobre p{
+    max-width: 900px;
+    text-align: justify;
+    color: var(--branco);
+    font-family: var(--p_font-family);
+    font-size: var(--p_font-size);
+    margin: auto; 
+}
+
+@media (max-width: 1025px) {
+    .sobre{
+        padding: 5vh 30vh 5vh 30vh;
+    }
+}
+
+@media (max-width: 850px) {
+    .sobre{
+        padding: 5vh 25vh 5vh 25vh;
+    }
+}
+
+@media (max-width: 700px) {
+    .sobre{
+        padding: 5vh 10vh 5vh 10vh;
+    }
+}
