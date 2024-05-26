@@ -186,6 +186,7 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
+        margin: 0 20vh 13vh 20vh;
         gap: 10px;
     }
 
