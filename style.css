@@ -133,7 +133,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 30vh 13vh 30vh;
+    margin: 0 50vh 13vh 50vh;
 }
 
 .circulo1, .circulo2, .circulo3, .circulo4 {
