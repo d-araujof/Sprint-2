@@ -4,7 +4,7 @@
 
 
 :root {
-    /* CORES */
+    /* PALETA DE CORES */
     --preto: #0D0D0D;
     --azul-max: #0874BE;
     --azul-medium: #02ADE3;
@@ -133,7 +133,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 10vh 13vh 10vh;
+    margin: 0 30vh 13vh 30vh;
 }
 
 .circulo1, .circulo2, .circulo3, .circulo4 {
@@ -187,7 +187,6 @@ main {
         align-items: center;
         justify-content: center;
         gap: 10px;
-
     }
 
     .circulo1, .circulo2, .circulo3, .circulo4 {
