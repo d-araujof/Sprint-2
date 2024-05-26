@@ -120,7 +120,7 @@ nav {
 
 /* MAIN */
 main {
-    background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fiap.com.br%2F2017%2F10%2F26%2Frobocup-4%2F&psig=AOvVaw0nSerORQ1rszwpFSb8dm9L&ust=1716831903854000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKi1ya_vq4YDFQAAAAAdAAAAABAE) no-repeat center center;
+    background: url("/images/foto-competicao.jpg") no-repeat center center;
     background-size: cover;
     height: 100vh;
     margin-bottom: 10vh;
@@ -133,7 +133,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 50vh 13vh 50vh;
+    margin: 0 30vh 13vh 30vh;
 }
 
 .circulo1, .circulo2, .circulo3, .circulo4 {
@@ -181,12 +181,23 @@ main {
     transform: translateX(-50%);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
+    .circulo-container {
+        margin: 0 10vh 13vh 10vh;
+        gap: 10px;
+    }
+
+    .word {
+        bottom: -20px;
+    }
+}
+
+@media (max-width: 768px) {
     .circulo-container{
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 20vh 13vh 20vh;
+        margin: 0 10vh 13vh 10vh;
         gap: 10px;
     }
 
